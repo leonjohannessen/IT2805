@@ -1,0 +1,42 @@
+/* global declarations
+ * georgia with fallback to system serif font
+ * light gray background color (shorthand for #eeeeee) */
+body {
+  font-family: Georgia, serif;
+  background: #eee;
+}
+
+/* added article layout for readability */
+article {
+  width: 55ch;
+  margin: 0 auto;
+}
+
+/* header must have different web safe font
+ * color for fun */
+header {
+  font-family: Helvetica, sans-serif;
+  color: #0890c2;
+}
+
+.answers {
+  color: ;
+}
+
+.old {
+  opacity: 0.5;
+}
+
+/* the image must be maximum 150 px wide
+ * and have a border (shorthand for border-width,
+ * -style, and -color, ) */
+img {
+  max-width: 150px;
+  border: 2px solid #4b5757;
+}
+
+code {
+  background: white;
+  border-bottom: 2px solid #da515b;
+  padding: 0 5px;
+}

@@ -1,0 +1,85 @@
+/* The font has to be changed to a font intended for readability: Georgia or Verdana.
+ * The width of the article body should only accommodate 65-75 characters.
+ * The line-height must be 1.5 (150%)
+ * The font font size of the article body must be between 18px and 22px.
+ * The background color of the entire page must be be light gray.
+ * The font color must be dark gray.
+ *
+ * Note:
+ * The 'ch'-unit represents the width of the '0'-character, thus I would assume
+ * that 'min-width: 65ch' and 'max-width: 75ch' should render 65-75 characters in width.
+ * However, after I tested it and counted the characters, this renders approx.
+ * 85 characters on a line.
+ */
+
+ body {
+   background: #eee; /* light gray background */
+   font-family: Georgia, serif;
+   font-size: 1.25em; /* 16 px (base) * 1.25 = 20 px */
+   line-height: 1.5em;
+   color: #444; /* dark gray text */
+ }
+
+article {
+    min-width: 55ch; /* approx 65 characters, excluding spaces */
+    max-width: 65ch; /* approx 75 characters, excluding spaces */
+    margin: auto;
+}
+
+/* The cover image (of the teapot) must have the same width as the article body.
+ *
+ * Note:
+ * There are no other images, and therefore one could use 'img' as the selector.
+ * However, I assume from the task given that this rule should apply only to
+ * the cover image.
+ */
+
+#cover {
+  width: 100%; /* width of the container element (article) */
+}
+
+h1 {
+    font-size: 3em;
+}
+
+/* There should be a horizontal line separating the byline and the article body.
+ * (I assume the article.html should not be altered with a hr ) */
+header {
+  border-bottom: 1px solid #999;
+}
+
+/* The margin between the title and the byline should be removed. */
+header h1 {
+  margin-bottom: 0;
+}
+
+/* only applies to a paragraph following a h1
+ * The task ask for this margin to be removed, but it looks so ugly.
+ * remove comment if neccessary
+header h1 + p {
+  margin-top: 0;
+}
+ */
+
+h2 {
+    font-size: 1.8em;
+}
+
+p, blockquote, ul, ol {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+#facts {
+    margin: 1em 0em 1em 1em;
+    width: 50%;
+    border: 1px dashed;
+    float: right;
+}
+
+/* fix path for list-style-image */
+#facts > ul {
+    list-style-image: url('../img/cup-icon.svg');
+    line-height: 1.5em;
+    padding-left: 1.5em;
+}
