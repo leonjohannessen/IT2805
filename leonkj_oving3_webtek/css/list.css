@@ -1,6 +1,5 @@
 body {
   margin: 0; /* remove border from body */
-  padding-bottom: 5em; /* so the sticky footer does not cover content */
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.25em;
   line-height: 1.5;
@@ -8,9 +7,22 @@ body {
 }
 
 .wrapper {
+  position: relative;
   min-height: 100vh;
   width: 50vw; /* limit width for readability */
   margin: 0 auto;
+}
+
+/* Add space to the last element (before the footer) */
+.wrapper > :nth-last-child(2) {
+  color: blue;
+  margin-bottom: 0;
+  padding-bottom: 150px;
+}
+
+h1 {
+  margin-top: 0;
+  padding-top: 2em;
 }
 
 li {
@@ -28,10 +40,10 @@ li > ul > li:last-of-type {
 }
 
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  left: 0;
-  height: 5em;
+  left: -25vw;
+  height: 100px;
   width: 100vw;
   background: yellow;
 }
@@ -46,5 +58,9 @@ footer p {
   .wrapper,
   footer p {
     width: 90vw;
+  }
+
+  footer {
+    left: -5vw;
   }
 }
