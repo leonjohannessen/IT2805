@@ -6,6 +6,7 @@ body {
   color: #444;
 }
 
+/* set the wrapper height to at least the viewport height */
 .wrapper {
   position: relative;
   min-height: 100vh;
@@ -15,7 +16,6 @@ body {
 
 /* Add space to the last element (before the footer) */
 .wrapper > :nth-last-child(2) {
-  color: blue;
   margin-bottom: 0;
   padding-bottom: 150px;
 }
@@ -39,6 +39,8 @@ li > ul > li:last-of-type {
   color: cyan;
 }
 
+/* Position the footer at the bottom of the wrapper, and pull it out to
+   full width */
 footer {
   position: absolute;
   bottom: 0;
@@ -54,7 +56,7 @@ footer p {
 }
 
 /* a tad of elegance for small screens */
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 960px), only screen and (max-device-width: 960px) {
   .wrapper,
   footer p {
     width: 90vw;
