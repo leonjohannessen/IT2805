@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+  font-family: arial, sans-serif;
+}
+
+#screen {
+  position: relative;
+}
+
+video {
+  height: auto;
+  width: 100%;
+}
+
+#fallbackImage {
+  height: auto;
+  width: 100%;
+  display: none;
+}
+
+#fallbackImage img {
+  width: 100%;
+}
+
+#title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#title > img {
+  width: 100%;
+}
+
+/* Tvetydig oppgavetekst: Antar at margen skal være 20% av bredden paa nettleser-
+vinduet totalt og at det kun er snakk om margen paa sidene, ikke at hver side
+skal ha marg paa 20%, for det stemmer ikke med gif-en i oppgaven */
+article {
+  width: 80vw;
+  margin: 70px auto;
+}
+
+p {
+  color: black;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 940px) {
+  video {
+    display: none;
+  }
+  #fallbackImage {
+    display: block;
+  }
+}
