@@ -1,4 +1,4 @@
-* {
+* { /* fryktelig upraktisk aa ta vekk margin/padding paa alle elementer */
   margin: 0;
   padding: 0;
 }
@@ -6,6 +6,7 @@
 body {
   background: white;
   font-family: arial, sans-serif;
+  line-height: 1.5;
 }
 
 #screen {
@@ -13,17 +14,8 @@ body {
 }
 
 video {
+  display: block;
   height: auto;
-  width: 100%;
-}
-
-#fallbackImage {
-  height: auto;
-  width: 100%;
-  display: none;
-}
-
-#fallbackImage img {
   width: 100%;
 }
 
@@ -38,9 +30,6 @@ video {
   width: 100%;
 }
 
-/* Tvetydig oppgavetekst: Antar at margen skal være 20% av bredden paa nettleser-
-vinduet totalt og at det kun er snakk om margen paa sidene, ikke at hver side
-skal ha marg paa 20%, for det stemmer ikke med gif-en i oppgaven */
 article {
   width: 80vw;
   margin: 70px auto;
@@ -56,7 +45,14 @@ p {
   video {
     display: none;
   }
-  #fallbackImage {
+
+  #screen::before{
+    content: '';
     display: block;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* image ratio */
+    background: url('../img/hovedbygget.png') no-repeat;
+    background-size: contain;
   }
 }

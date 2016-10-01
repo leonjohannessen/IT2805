@@ -5,39 +5,28 @@
       <title>Øving 4</title>
       <link rel="stylesheet" href="css/style.css">
   </head>
-  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
   <body>
     <div id="screen">
 
       <!-- autoavspilling, looping og deaktivert lyd, samt fallbackbilde -->
       <video autoplay loop muted poster="img/hovedbygget.png">
-        <source src='videos/hovedbygget.webm'
-                type='video/webm; codecs="vp8, vorbis"'>
-        <source src='videos/hovedbygget.mp4'
-                type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
-        <source src='videos/hovedbygget.ogv'
-                type='video/ogg; codecs="theora, vorbis"'>
-        <!-- leser oppgaveteksten som at vi maa ha med tre formater, selv om
-        to formater ville dekket alle nettleserne som er opplistet -->
+        <!-- dropper aa definere codec etter aa ha snakket med studass -->
+        <source src="videos/hovedbygget.webm" type="ideo/webm">
+        <source src="videos/hovedbygget.mp4" type="video/mp4">
+        <source src="videos/hovedbygget.ogv" type="video/ogg">
+        <!-- Leser innlegget paa itslearning som at det er overfloedig aa ha med:
+        <img src="img/hovedbygget.png" title="Your browser does not support video" alt="Image of Hovedbygget at NTNU" />
+        siden poster-atributten viser et hvis nettleseren ikke støtter kildefilene -->
       </video>
 
-      <div id="fallbackImage">
-        <img src="img/hovedbygget.png" alt="Image of Hovedbygget at NTNU" />
-      </div>
-
       <div id="title">
-        <img src="img/ntnu.png" />
+        <img src="img/ntnu.png" alt="NTNU logo"/>
       </div>
 
     </div>
 
     <article class="content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </article>
 
