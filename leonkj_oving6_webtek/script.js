@@ -19,7 +19,7 @@ function updateTaxField(value) {
   update the taxfield with the new tax value
 
 ---------------------------------------------------------------------- */
-incomeField.addEventListener('input', function (e){
+incomeField.addEventListener('input', function(){
   let tax = calculateTax(incomeField.value, wealthField.value)
   updateTaxField(tax);
 });
@@ -30,7 +30,10 @@ incomeField.addEventListener('input', function (e){
   update the taxfield with the new tax value
 
 ---------------------------------------------------------------------- */
-wealthField.addEventListener('input', function (event){
+wealthField.addEventListener('input', function(){
   let tax = calculateTax(incomeField.value, wealthField.value)
   updateTaxField(tax);
 });
+
+/* NOTE: for begge event-listerene hadde det kanskje vaert bedre aa
+skrive om funksjonene, slik at man ikke bruker anonyme funksjoner */
