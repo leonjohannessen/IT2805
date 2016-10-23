@@ -1,0 +1,15 @@
+Assignment 4 questions
+
+1) Autoplay is usually disabled on mobile devices to prevent loading unnecessary
+(and unrequested) data over mobile networks, that may cause additional costs for the user.
+
+2) It will do nothing. The defined range applies to screens with a device width of 768 - 1024 px.
+
+3) Some advantages of a single responsive website over a dedicated mobile version are:
+   - Less development time and maintenance, as you don't have to develop and maintain two different solutions.
+   - The URLs will be the same for mobile and desktop users, which in turn is better for link sharing and search engine results.
+
+Notat til del 5:
+Jeg loeste dette foerst ved aa legge inn en div med bildet inni etter videoelementet,
+og saa skjule denne vha. css, og vise den igjen (og skjule video-elementet) vha.
+mediaquerien, men etter aa ha snakket med studass skrev jeg det om slik det er naa.
