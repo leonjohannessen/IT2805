@@ -30,6 +30,7 @@ video {
   width: 100%;
 }
 
+/* 80 % width = 20 % margin on each side */
 article {
   width: 80vw;
   margin: 70px auto;
@@ -41,7 +42,7 @@ p {
   line-height: 1.5;
 }
 
-@media only screen and (max-width: 940px) {
+@media only screen and (max-device-width: 940px) {
   video {
     display: none;
   }

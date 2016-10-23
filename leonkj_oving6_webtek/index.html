@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Norwegian Tax Administration - Tax form</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+    <body>
+        <form action="http://folk.ntnu.no/michaedm/norwegian-tax-administration/receive.php" method="post">
+          <h1>Super Hero Tax Return</h1>
+
+          <!-- generelt: har lagt inn delene av skjemaet som hoerer sammen i sections
+          og satt inn placeholders for aa gi bedre brukervennlighet. Required + type-
+          deklarasjonene soerger for validering av skjemaet / at skjemaet ikke kan sendes
+          inn foer det er korrekt utfylt -->
+
+          <section>
+            <h2>Personalia</h2>
+            <p>
+              <label for="name">
+                <span>Real name</span>
+                <input id="name"
+                       type="text"
+                       name="name"
+                       placeholder="Your name"
+                       required />
+              </label>
+            </p>
+            <fieldset>
+              <legend>Gender</legend>
+              <ul>
+                <li>
+                  <label for="female">
+                    <span>Female</span>
+                    <input id="female"
+                           type="radio"
+                           name="gender"
+                           value="f"
+                           required />
+                  </label>
+                </li>
+                <li>
+                  <label for="male">
+                    <span>Male</span>
+                    <input id="male"
+                          type="radio"
+                          name="gender"
+                          value="m"
+                          required />
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+            <p>
+              <label for="email">
+                <span>E-mail</span>
+                <input id="email"
+                       type="email"
+                       name="email"
+                       placeholder="Your e-mail address"
+                       required />
+              </label>
+            </p>
+            <p>
+              <label for="birthdate">
+                <span>Birthdate</span>
+                <input id="birthdate"
+                       type="date"
+                       name="birthdate"
+                       max="1987-12-31"
+                       required />
+                       <!-- datoformatet maa vaere slik for aa gi validering -->
+              </label>
+            </p>
+          </section>
+
+          <section>
+            <h2>Super Hero Information</h2>
+            <p>
+              <label for="hero">
+                <span>Hero name</span>
+                <input id="hero"
+                       type="text"
+                       name="hero"
+                       placeholder="Your super hero name"
+                       required />
+              </label>
+            </p>
+            <fieldset>
+              <legend>Do you wear spandex?</legend>
+              <p>
+                <label for="spandex">
+                  <span>Yes</span>
+                  <input id="spandex"
+                         type="checkbox"
+                         name="spandex"
+                         value="true" />
+                  <!-- gir ingen verdi hvis checkboxen ikke er huket av, og
+                  true hvis verdien er huket av. Har snakket med Camilla Tran
+                  og saavidt vi kan skjoenne er det ikke en annen maate aa gjoere
+                  dette paa -->
+                </label>
+              </p>
+            </fieldset>
+            <p>
+              <label for="strength">
+                <span>Strength</span>
+                <input id="strength"
+                       type="number"
+                       name="strength"
+                       min="1"
+                       max="10"
+                       placeholder="Your strength: 1 (low) - 10 (high)"
+                       required />
+              </label>
+            </p>
+            <p>
+              <label for="speed">
+                <span>Speed</span>
+                <input id="speed"
+                       type="number"
+                       name="speed"
+                       min="1"
+                       max="10"
+                       placeholder="Your speed: 1 (low) - 10 (high)"
+                       required />
+              </label>
+            </p>
+            <p>
+              <label for="intelligence">
+                <span>Intelligence</span>
+                <input id="intelligence"
+                       type="number"
+                       name="intelligence"
+                       min="1"
+                       max="10"
+                       placeholder="Your intelligence: 1 (low) - 10 (high)"
+                       required />
+              </label>
+            </p>
+          </section>
+
+          <section>
+            <h2>Tax Base &amp; Calculation</h2>
+            <p>
+              <label for="income">
+                <span>Income</span>
+                <input id="income"
+                       type="number"
+                       name="income"
+                       min="0"
+                       placeholder="Your income"
+                       required />
+              </label>
+            </p>
+            <p>
+              <label for="wealth">
+                <span>Wealth</span>
+                <input id="wealth"
+                       type="number"
+                       name="wealth"
+                       min="0"
+                       placeholder="Your wealth"
+                       required />
+              </label>
+            </p>
+            <p>
+              <label for="tax">
+                <span>Tax</span>
+                <input id="tax"
+                       type="number"
+                       name="tax"
+                       placeholder="Your calculated tax"
+                       disabled />
+                <!-- sender ikke tax-verdien med post-requesten, men den boer
+                vel uansett regnes ut server side -->
+              </label>
+            </p>
+          </section>
+
+          <p>
+            <input type="submit" value="Submit tax form">
+          </p>
+
+        </form>
+
+        <script src="script.js"></script>
+    </body>
+</html>
