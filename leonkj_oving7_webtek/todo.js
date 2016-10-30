@@ -1,5 +1,3 @@
-/*jshint esversion: 6 */
-
 // Create empty array of all todos
 const tasks = [];
 
