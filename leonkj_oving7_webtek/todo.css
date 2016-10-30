@@ -1,0 +1,55 @@
+/* Remove bullets */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Strike through text of completed todos */
+input[type=checkbox]:checked + label {
+  text-decoration: line-through;
+}
+
+/* styling */
+input[type=checkbox] {
+  margin: 0 1em 0 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25em;
+  line-height: 1.5;
+  font-weight: 300;
+  background: #eee;
+}
+
+main {
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+section {
+  width: calc(100%/3);
+  padding: 2em;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: 1em;
+  padding: 5em 0 3em;
+  opacity: .5;
+}
+
+h2 {
+  font-size: 1em;
+  color: #399;
+}
+
+input[type=checkbox]:checked,
+input[type=checkbox]:checked + label {
+  opacity: .25;
+}
