@@ -19,7 +19,8 @@ function updateTaxField(value) {
   update the taxfield with the new tax value
 
 ---------------------------------------------------------------------- */
-incomeField.addEventListener('input', function(){
+incomeField.addEventListener('input', function(event){
+  // event parameter left there, even though it is not used
   let tax = calculateTax(incomeField.value, wealthField.value)
   updateTaxField(tax);
 });
@@ -30,7 +31,8 @@ incomeField.addEventListener('input', function(){
   update the taxfield with the new tax value
 
 ---------------------------------------------------------------------- */
-wealthField.addEventListener('input', function(){
+wealthField.addEventListener('input', function(event){
+  // event parameter left there, even though it is not used
   let tax = calculateTax(incomeField.value, wealthField.value)
   updateTaxField(tax);
 });
