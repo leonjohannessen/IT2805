@@ -42,6 +42,8 @@
 
       const canvasHeight = canvas.height;
       const canvasWidth = canvas.width;
+
+      const chartMaxValue = 1000000;
       const numberOfLines = 10;
       const spaceBetweenLines = canvasHeight / numberOfLines;
 
@@ -98,7 +100,7 @@
         // for each line, create text label, save the context, translate to new position,
         // draw the textlabel and the line, then reset the context
         for (let i=1; i <= numberOfLines; i++) {
-          const textLabel = i * 10000;
+          const textLabel = i * chartMaxValue / 10;
 
           context.save();
           context.translate(0, i * -spaceBetweenLines);
