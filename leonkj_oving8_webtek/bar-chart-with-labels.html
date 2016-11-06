@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tax forms: Bar chart with lines</title>
+    <meta charset="UTF-8">
+    <script src="taxForms.js"></script>
+  </head>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+  <body>
+
+    <canvas id="chart" width="700" height="500"></canvas>
+
+    <script>
+      const canvas = document.getElementById('chart');
+      const context = canvas.getContext('2d');
+
+      /* Draw a line from (fromX, fromY) to (toX, toY) */
+      function drawLine(fromX, fromY, toX, toY) {
+        context.beginPath();
+        context.moveTo(toX, toY);
+        context.lineTo(fromX, fromY);
+        context.stroke();
+      }
+
+      /* Draw a text (string) on (x, y) */
+      function drawText(text, x, y) {
+        context.fillText(text, x, y);
+      }
+
+      /* Draw a text and with a line to its right */
+      function drawLineWithText(text, fromX, fromY, toX, toY) {
+        drawLine(fromX, fromY, toX, toY);
+        drawText(text, fromX - 50, fromY + 10);
+      }
+
+      /* Insert your code here.
+       *
+       * Define constants
+       *
+       * NOTE: initially shifted the draw area, but didn't use it.
+       * The code is cleaner this way, I think. */
+
+      const canvasHeight = canvas.height;
+      const canvasWidth = canvas.width;
+      const numberOfLines = 10;
+      const spaceBetweenLines = canvasHeight / numberOfLines;
+
+      // spacing and sizing constants
+      const labelWidth = 100;
+      const labelHeight = 25;
+      const padding = 10;
+
+      // Array of label objects
+      const labels = [
+        {
+          text: 'Income',
+          color: 'red'
+        },
+        {
+          text: 'Wealth',
+          color: 'blue'
+        }
+      ];
+
+      //draw the lines and labels
+      drawChartLines();
+      drawLabels(labels);
+
+      /* Function that takes an array of label objects, and renders them */
+      function drawLabels(labels) {
+        const numberOfLabels = labels.length;
+        const labelXPosition = canvasWidth - labelWidth;
+        const distanceBetweenLabels = labelHeight + padding;
+
+        for (let i = 0; i < numberOfLabels; i++) {
+          drawLabel(labels[i].text, labels[i].color, labelXPosition, i * distanceBetweenLabels);
+        }
+      }
+
+      /* function that draws a text label */
+      function drawLabel(text, color, x, y) {
+        // draw the text label
+        drawText(text, x + labelWidth/2 + padding, y + labelHeight/2 + 3);
+
+        // save the context, set fill color, draw the rectangle, and reset the context
+        context.save();
+        context.fillStyle = color;
+        context.fillRect(x, y, labelWidth/2, labelHeight);
+        context.restore();
+      }
+
+      /* Function that draw the graph lines */
+      function drawChartLines() {
+        // Save context, and translate to the bottom of the canvas
+        context.save();
+        context.translate(0, canvasHeight);
+
+        // for each line, create text label, save the context, translate to new position,
+        // draw the textlabel and the line, then reset the context
+        for (let i=1; i <= numberOfLines; i++) {
+          const textLabel = i * 10000;
+
+          context.save();
+          context.translate(0, i * -spaceBetweenLines);
+          // make room for the labels
+          drawLineWithText(textLabel, 100, 0, canvasWidth - labelWidth - padding, 0);
+          context.restore();
+        }
+        // restore the context to the position before the inital translation
+        context.restore();
+      }
+
+    </script>
+  </body>
+</html>

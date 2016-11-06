@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Income greather than 500 000</title>
+    <meta charset="UTF-8">
+    <script src="taxForms.js"></script>
+  </head>
+  <body>
+    <script>
+      // Console.log only the real name of the superheroes that have an
+      // income greater than 500 000 using lambdas
+      console.log(taxForms.filter(tf => tf.income > 500000).map(tf => tf.realName));
+
+      /* More verboase version
+      const incomeLimit = 500000;
+      const richTaxPayers = taxForms.filter(taxForms => taxForms.income > incomeLimit);
+      const richTaxPayersNames = richTaxPayers.map(taxForms => taxForms.realName);
+
+      console.log(richTaxPayersNames); */
+    </script>
+  </body>
+</html>

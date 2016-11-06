@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tax forms: Bar chart with lines</title>
+    <meta charset="UTF-8">
+    <script src="taxForms.js"></script>
+  </head>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+  <body>
+
+    <canvas id="chart" width="700" height="500"></canvas>
+
+    <script>
+      const canvas = document.getElementById('chart');
+      const context = canvas.getContext('2d');
+
+      /* Draw a line from (fromX, fromY) to (toX, toY) */
+      function drawLine(fromX, fromY, toX, toY) {
+        context.beginPath();
+        context.moveTo(toX, toY);
+        context.lineTo(fromX, fromY);
+        context.stroke();
+      }
+
+      /* Draw a text (string) on (x, y) */
+      function drawText(text, x, y) {
+        context.fillText(text, x, y);
+      }
+
+      /* Draw a text and with a line to its right */
+      function drawLineWithText(text, fromX, fromY, toX, toY) {
+        drawLine(fromX, fromY, toX, toY);
+        drawText(text, fromX - 50, fromY + 10);
+      }
+
+      /* Insert your code here.
+       *
+       * Define constants
+       *
+       * NOTE: initially shifted the draw area, but didn't use it.
+       * The code is cleaner this way, I think. */
+
+      const canvasHeight = canvas.height;
+      const canvasWidth = canvas.width;
+      const numberOfLines = 10;
+      const spaceBetweenLines = canvasHeight / numberOfLines;
+
+      // Draw the lines
+      drawChartLines();
+
+      /* Function that draw the graph lines */
+      function drawChartLines() {
+        // Save context, and translate to the bottom of the canvas
+        context.save();
+        context.translate(0, canvasHeight);
+
+        // for each line, create text label, save the context, translate to new position,
+        // draw the textlabel and the line, then reset the context
+        for (let i=1; i <= numberOfLines; i++) {
+          const textLabel = i * 10000;
+
+          context.save();
+          context.translate(0, i * -spaceBetweenLines);
+          drawLineWithText(textLabel, 100, 0, canvasWidth, 0);
+          context.restore();
+        }
+        // restore the context to the position before the inital translation
+        context.restore();
+      }
+
+    </script>
+  </body>
+</html>

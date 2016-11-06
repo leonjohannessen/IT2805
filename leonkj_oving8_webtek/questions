@@ -1,0 +1,43 @@
+1. What other context(s) can we get when calling getContext() on a Canvas element?
+
+According to the MDN documentation, we can get three other contexts in addition
+to the 2d context.
+
+  - "webgl" will create a WebGLRenderingContext
+  - "webgl2" will create a WebGL2RenderingContext
+  - "bitmaprenderer" will create a ImageBitmapRenderingContext
+
+2. How would you create a blue circle using the Canvas element? Explain with words or code.
+
+Assuming a canvas with a 2d context:
+
+//save the context
+context.save();
+
+//set the fill style to blue
+context.fillStyle = 'blue';
+
+// draw a circle from x = 500, y = 200, radius = 100,
+// starting angle = 0, end angle p*2 (full rotation)
+context.arc(500,200,100,0, Math.PI*2);
+
+// fill the circle
+context.fill();
+
+// restore context, so that the next element is not blue
+context.restore();
+
+3. What is a more terse (also known as shorter) way of writing the loop in the
+following using the Array.filter method?
+
+A more terse way of writing the code could be:
+
+function startsWithN(value){
+  return value.startsWith('N');
+}
+
+const countriesStartingWithN = countries.filter(startsWithN);
+
+An even more terse way using lambdas:
+
+const countriesStartingWithN = countries.filter(c => c.startsWith('N'));
